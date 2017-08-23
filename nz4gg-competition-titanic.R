@@ -50,7 +50,7 @@ results <- predict(model2,newdata= test,type='response')
 results <- ifelse(results > 0.5,1,0)  # if fitted values >0.5 assigned 1, otherwise 0 
 
 table = data.frame(results,test$PassengerId)
-write.table(table,file="nz4gg.csv",sep = ',', row.names = F)
+write.table(table,file="nz4gg.csv",sep = ',', row.names = F,col.names = c('PassengerID','Survived'))
 
 
 
